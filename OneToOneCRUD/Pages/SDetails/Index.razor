@@ -1,0 +1,37 @@
+﻿@page "/sdetails/index"
+@if (Details is null)
+{
+    <p><em>Loading ...</em></p>
+}
+<div>
+    <a href="sdetails/create">Create detail of a student </a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Student</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var detail in Details)
+        {
+        <tr>
+            <th scope="row">@detail.Id</th>
+            <td>@detail.Student.Name</td>
+            <td>@detail.Email</td>
+            <td>@detail.Address</td>
+            <td>
+                <a href="#">Details</a> |
+                <a href="#">Edit</a> |
+                <a href="#">Delete</a>
+            </td>
+        </tr>
+        }
+
+
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+﻿@page "/sdetails/create"
+<EditForm Model="@Model" OnValidSubmit="HandelValidSubmit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <div class="form-group">
+        <label>Student</label>
+        <InputSelect @bind-Value="Model.StudentId" class="form-control">
+            <option value="" selected hidden disabled>-- select a student</option>
+            @foreach (var student in Model.Students)
+            {
+                <option value="@student.Id">@student.Name</option>
+            }
+
+        </InputSelect>       
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <InputText @bind-Value="Model.Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <InputText @bind-Value="Model.Address" class="form-control" />
+    </div>
+    <button class="btn btn-primary">Save</button>
+</EditForm>

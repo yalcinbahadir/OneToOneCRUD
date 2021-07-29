@@ -1,0 +1,19 @@
+﻿@page "/students/createwithdetails"
+<h3>Create With Details</h3>
+<EditForm Model="@Model" OnValidSubmit="HandelValidSubmit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <div class="form-group">
+        <label>Name</label>
+        <InputText @bind-Value="Model.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <InputText @bind-Value="Model.Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <InputText @bind-Value="Model.Address" class="form-control" />
+    </div>
+    <button class="btn btn-primary">Save</button>
+</EditForm>
